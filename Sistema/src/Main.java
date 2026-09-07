@@ -1,15 +1,13 @@
+import servicos.FuncoesMedia;
+import servicos.IOUtils;
+
 public static void main(String[] args) {
-    String n = "Carlos";
-    double a = 8;
-    double b = 7;
-    double c = (a + b) / 2;
+    String nomeAluno = "Carlos";
+    double notaN1 = 8;
+    double notaN2 = 7;
 
-    System.out.println("Aluno: " + n);
-    System.out.println("Media: " + c);
+    double mediaAluno = FuncoesMedia.calcularMediaAluno(notaN1, notaN2);
+    String statusAprovacao = FuncoesMedia.calcularAprovacao(mediaAluno);
 
-    if (c >= 6) {
-        System.out.println("Aprovado");
-    } else {
-        System.out.println("Reprovado");
-    }
+    IOUtils.exibirAlunoEAprovacao(nomeAluno, mediaAluno, statusAprovacao);
 }
